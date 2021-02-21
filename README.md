@@ -13,6 +13,19 @@ Library
 
 
 ## 1. Explain about Implementation
+- model.py : Front-end module, Context module, Context-Large module
+- train.py : train model
+- utils.py : calculate mIoU
+- Used similar train settings of paper on training
+  * input : (3, 300, 300)
+  * batch size : 14
+  * learning rate : 0.001
+  * momentum : 0.9
+  * weight decay : 0.0005
+- mIoU score may be quite different with paper
+  * input size is different cause of computing resources
+  * use zero padding instead of reflection padding
+  * instead of 33 padding after front-end module, just bilinear interpolate for original size
 
 
 ## 2. Brief Summary of *'Multi-Scale Context Aggregation by Dilated Convolutions'*
